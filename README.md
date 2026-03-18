@@ -1,68 +1,54 @@
-o codigo que usei foi:
+# Pipeline de Dados para Gestão de Obras (Python + Power BI)
 
-## Objetivo: 
-    # Atualizar a base de dados de obras com as informações mais recentes disponíveis.
-    # A BASE - EMPREENDIMENTO será o arquivo raiz para que possa surgir as conferências necessárias para a atualização.
-    # Quando eu atualizar a BASE - EMPREENDIMENTO, as outras bases serão atualizadas automaticamente, pois elas estão vinculadas a ela.
-    # Eu rodo as atualizações da BASE toda sexta-feira. 
-    # Após atualização da BASE - EMPREENDIMENTO, eu gero um relatório de conferência para verificar se as atualizações foram realizadas corretamente.
-    # Se estiver tudo certo, eu anexo no e-mail de envio do Dash Corporativo para que haja uma transparência referente as obras no mês de análise. 
-    # Pandas é uma biblioteca de código aberto para análise de dados em Python. Ela fornece estruturas de dados e funções para manipulação e análise de dados de forma eficiente. 
-    # Pathlib é uma biblioteca padrão do Python para manipulação de caminhos de arquivos e diretórios. Ela fornece uma interface orientada a objetos para trabalhar com caminhos, facilitando a criação, leitura, escrita e manipulação de arquivos e diretórios de forma mais intuitiva e legível.
+Projeto de construção de um pipeline de dados para automação e análise de obras, integrando Python, SQL e Power BI para geração de insights e acompanhamento gerencial.
 
-import pandas as pd
-from pathlib import Path
+# Objetivos: 
 
-arquivo_base = Path(r"Z:\Op_Int_Negocios\00_Base de Dados\01_Base Geral\2026.03\BASE - EMPREENDIMENTO.xlsx")
-arquivo_saida = Path(r"Z:\Op_Int_Negocios\12_Estudos\Acompanhamento semanal de obras.xlsx")
-nome_aba = "BASE"
+- Automatizar o tratamento de dados de obras
+- Construir um pipeline de ETL para padronização das informações
+- Disponibilizar dashboards interativos para análise gerencial
 
-df = pd.read_excel(arquivo_base, sheet_name=nome_aba, header=4)
-df.columns = df.columns.astype(str).str.strip()
+## Tecnologias utilizadas: 
 
-# confira os nomes exatos no Excel
-col_obra = "OBRA"
-col_plan_perc = "MENSAL - PLAN - %OBRA"
-col_real_perc = "MENSAL - REAL - %OBRA"
-col_aderencia = "ADERÊNCIA - PREVISON"
-col_prev_ult_med = "PREVISION - ULTIMA MEDIÇÃO"
+- Python (Pandas)
+- MySQL
+- Excel
+- Power BI
 
-# manter apenas linhas com obra
-df = df[df[col_obra].notna()].copy()
+## Funcionamento do projeto: 
 
-# tratar colunas numéricas
-colunas_numericas = [
-    col_plan_perc,
-    col_real_perc,
-    col_aderencia
-]
+1. Leitura da planilha base por Pandas.
+2. Tratamento e filtragem de dados com Python (ETL).
+3. Armazenamento dos dados tratados para análise
+4. Visualização no Power BI.
 
-for col in colunas_numericas:
-    df[col] = (
-        df[col]
-        .astype(str)
-        .str.replace("%", "", regex=False)
-        .str.replace(",", ".", regex=False)
-        .str.strip()
-    )
-    df[col] = pd.to_numeric(df[col], errors="coerce")
+## Estrutura do projeto: 
 
-# tratar data
-df[col_prev_ult_med] = pd.to_datetime(df[col_prev_ult_med], errors="coerce")
+- data/: dados brutos e tratados.
+- src/: scripts de automação.
+- dashboards/: arquivos do Power BI.
 
-# manter apenas colunas relevantes
-colunas_saida = [
-    col_obra,
-    col_plan_perc,
-    col_real_perc,
-    col_aderencia,
-    col_prev_ult_med
-]
+## Como executar
 
-df_base_tratada = df[colunas_saida].copy()
+1. Clone o repositório:
+git clone https://github.com/seu-usuario/seu-repo
 
-# exportar
-with pd.ExcelWriter(arquivo_saida, engine="openpyxl", mode="w") as writer:
-    df_base_tratada.to_excel(writer, sheet_name="Base Tratada", index=False)
+2. Instale as dependências:
+pip install -r requirements.txt
 
-print(f"Planilha atualizada com sucesso em: {arquivo_saida}")
+3. Execute o script:
+python src/etl.py
+
+## Resultados:
+
+- Automatização de processos
+- Redução de erros
+- Controle do histórico de dados
+- Dashboard atualizado automaticamente
+
+## Melhorias futuras
+
+- Deploy do pipeline em ambiente cloud (AWS)
+- Automação do processo via agendamento (scheduler)
+- Integração com banco de dados relacional
+- Criação de API para consumo dos dados
