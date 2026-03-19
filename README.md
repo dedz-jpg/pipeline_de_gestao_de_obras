@@ -27,7 +27,7 @@ Base Tratada
         ↓
 Power BI (Dashboard)  
 
-![Pipeline de Dados](images/pipeline_de_dados.png)
+![Pipeline de Dados](images/pipeline_de_dados.jpg)
 
 ## Funcionamento do projeto: 
 
