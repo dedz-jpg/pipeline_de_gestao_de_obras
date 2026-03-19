@@ -1,4 +1,4 @@
-# Pipeline de Dados para Gestão de Obras (Python + Power BI)
+# Pipeline de Dados para Gestão de Obras 
 
 Projeto de construção de um pipeline de dados para automação e análise de obras, integrando Python, SQL e Power BI para geração de insights e acompanhamento gerencial.
 
@@ -14,6 +14,18 @@ Projeto de construção de um pipeline de dados para automação e análise de o
 - MySQL
 - Excel
 - Power BI
+
+## Arquitetura do Projeto
+
+O fluxo de dados segue o seguinte processo:
+
+Excel (Base - Empreendimento)
+        ↓
+Python (ETL com Pandas)
+        ↓
+Base Tratada
+        ↓
+Power BI (Dashboard)  
 
 ## Funcionamento do projeto: 
 
@@ -34,9 +46,10 @@ Projeto de construção de um pipeline de dados para automação e análise de o
 git clone https://github.com/seu-usuario/seu-repo
 
 2. Instale as dependências:
-pip install -r requirements.txt
+pip install pandas 
+pip install openpyxl
 
-3. Execute o script:
+4. Execute o script:
 python src/etl.py
 
 ## Resultados:
