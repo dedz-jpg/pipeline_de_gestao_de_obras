@@ -27,6 +27,8 @@ Base Tratada
         ↓
 Power BI (Dashboard)  
 
+![Pipeline de Dados](images/pipeline-de-dados.png)
+
 ## Funcionamento do projeto: 
 
 1. Leitura da planilha base por Pandas.
