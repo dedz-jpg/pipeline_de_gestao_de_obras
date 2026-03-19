@@ -45,13 +45,17 @@ Power BI (Dashboard)
 ## Como executar
 
 1. Clone o repositório:
+
 git clone https://github.com/seu-usuario/seu-repo
 
 2. Instale as dependências:
+
 pip install pandas 
+
 pip install openpyxl
 
 4. Execute o script:
+
 python src/etl.py
 
 ## Resultados:
