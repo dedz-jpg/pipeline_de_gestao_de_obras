@@ -19,7 +19,7 @@ Projeto de construção de um pipeline de dados para automação e análise de o
 
 O fluxo de dados segue o seguinte processo:
 
-Excel (Base - Empreendimento)
+Excel (Planilha Base)
         ↓
 Python (ETL com Pandas)
         ↓
