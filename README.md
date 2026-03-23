@@ -1,3 +1,5 @@
+PT-BR Version
+
 # Pipeline de Dados para Gestão de Obras
 
 Projeto de engenharia e análise de dados com foco em automação de processos e geração de insights.
@@ -101,4 +103,113 @@ Excel → Python → MySQL → Power BI
 - Deploy do pipeline em ambiente cloud (AWS)  
 - Automação via agendamento (scheduler)  
 - Integração completa com banco de dados relacional  
-- Criação de API para consumo dos dados  
+- Criação de API para consumo dos dados
+
+---
+
+ENG - Version: 
+
+# Data Pipeline for Construction Project Management
+
+A data engineering and analytics project focused on process automation and insight generation.
+
+## Technologies Used
+
+- Excel (data source)
+- Python (Pandas, Pathlib)
+- MySQL (storage – in progress)
+- Power BI (visualization)
+
+---
+
+## Objective
+
+- Automate the processing of construction project data  
+- Build an ETL pipeline to standardize information  
+- Provide interactive dashboards for managerial analysis  
+
+---
+
+## Pipeline Architecture
+
+Excel → Python → MySQL → Power BI  
+
+---
+
+## Dashboard
+
+![Construction Management Dashboard](images/dash_gestao.png)
+
+**Key insights:**
+- Schedule tracking  
+- Delay identification  
+- Overall project overview  
+
+---
+
+## Data Pipeline
+
+![Data Pipeline](images/pipeline_de_dados.jpg)
+
+**Process steps:**
+
+1. Extract data from Excel  
+2. Transform and standardize data using Python  
+3. Generate a clean dataset  
+4. Load and visualize data in Power BI  
+
+---
+
+## Business Rules
+
+- Delay calculation in months based on the planned delivery date  
+- Project classification into:  
+  - On schedule  
+  - At risk  
+  - Delayed  
+
+---
+
+## Key Features
+
+- Structured ETL pipeline  
+- Automated data processing  
+- Business rule implementation  
+- Integration between Excel, Python, and Power BI  
+
+---
+
+## Project Structure
+
+├── data/
+├── src/
+├── sql/
+├── powerbi/
+└── README.md
+
+
+---
+
+## How to Run
+
+1. Update the Excel file  
+2. Run the Python script  
+3. Refresh the Power BI dashboard  
+
+---
+
+## Results
+
+- Process automation  
+- Error reduction  
+- Historical data tracking  
+- Automatically updated dashboard  
+
+---
+
+## Future Improvements
+
+- Deploy the pipeline in a cloud environment (AWS)  
+- Automate execution using a scheduler  
+- Full integration with a relational database  
+- API development for data consumption  
