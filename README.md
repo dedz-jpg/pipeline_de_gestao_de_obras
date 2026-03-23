@@ -1,8 +1,8 @@
-PT-BR Version
-
 # Pipeline de Dados para Gestão de Obras
 
-Projeto de engenharia e análise de dados com foco em automação de processos e geração de insights.
+## 🇧🇷 PT-BR Version
+
+Projeto desenvolvido como estudo prático de engenharia e análise de dados.
 
 ## Tecnologias utilizadas
 
@@ -107,11 +107,11 @@ Excel → Python → MySQL → Power BI
 
 ---
 
-ENG - Version: 
+## 🇺🇸 English Version
 
 # Data Pipeline for Construction Project Management
 
-A data engineering and analytics project focused on process automation and insight generation.
+Project developed as a hands-on data engineering and analytics study.
 
 ## Technologies Used
 
@@ -155,8 +155,8 @@ Excel → Python → MySQL → Power BI
 
 1. Extract data from Excel  
 2. Transform and standardize data using Python  
-3. Generate a clean dataset  
-4. Load and visualize data in Power BI  
+3. Generate a cleaned and structured dataset
+4. Load and analyze data in Power BI
 
 ---
 
