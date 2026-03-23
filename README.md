@@ -1,6 +1,8 @@
-# Pipeline de Dados para Gestão de Obras 
+# Pipeline de Dados para Gestão de Obras
 
-Projeto de construção de um pipeline de dados para automação e análise de obras, integrando Python, SQL e Power BI para geração de insights e acompanhamento gerencial.
+Projeto completo de engenharia e análise de dados utilizando Excel, Python, MySQL e Power BI.
+
+O objetivo é automatizar o tratamento de dados de obras e gerar insights sobre prazos, atrasos e desempenho dos empreendimentos.
 
 # Objetivos: 
 
@@ -8,55 +10,62 @@ Projeto de construção de um pipeline de dados para automação e análise de o
 - Construir um pipeline de ETL para padronização das informações
 - Disponibilizar dashboards interativos para análise gerencial
 
-## Tecnologias utilizadas: 
+## Tecnologias utilizadas
 
-- Python (Pandas)
-- MySQL
-- Excel
-- Power BI
+- Excel (fonte de dados)
+- Python (Pandas, Pathlib)
+- MySQL (armazenamento e modelagem)
+- Power BI (visualização e análise)
 
-## Arquitetura do Projeto
+## Arquitetura do Pipeline
 
-O fluxo de dados segue o seguinte processo:
+Excel → Python → MySQL → Power BI
 
-Excel (Planilha Base)
-        ↓
-Python (ETL com Pandas)
-        ↓
-Base Tratada
-        ↓
-Power BI (Dashboard)  
+![Dashboard de Gestão de Obras](images/dash_gestao.png)
+
+Principais análises:
+- Acompanhamento de prazos
+- Identificação de atrasos
+- Visão geral dos empreendimentos
+
+## Pipeline de Dados
 
 ![Pipeline de Dados](images/pipeline_de_dados.jpg)
 
-## Funcionamento do projeto: 
+1. Extração dos dados a partir do Excel
+2. Tratamento e padronização com Python
+3. Carga dos dados no MySQL
+4. Consumo dos dados no Power BI.
 
-1. Leitura da planilha base por Pandas.
-2. Tratamento e filtragem de dados com Python (ETL).
-3. Armazenamento dos dados tratados para análise
-4. Visualização no Power BI.
+## Regras de Negócio
 
-## Estrutura do projeto: 
+- Cálculo de atraso em meses com base na data prevista
+- Classificação de obras em:
+  - No prazo
+  - Em risco
+  - Em atraso
+ 
+## Diferenciais do Projeto
 
-- data/: dados brutos e tratados.
-- src/: scripts de automação.
-- dashboards/: arquivos do Power BI.
+- Estruturação de pipeline ETL
+- Uso de banco relacional (MySQL) em vez de Excel como base final
+- Separação entre dados brutos e tratados
+- Automação do processo de atualização
+
+## Estrutura do Projeto
+
+├── data/
+├── src/
+├── sql/
+├── powerbi/
+└── README.md
 
 ## Como executar
 
-1. Clone o repositório:
+1. Atualizar o arquivo Excel
+2. Rodar o script Python
+3. Atualizar o Power BI
 
-git clone https://github.com/seu-usuario/seu-repo
-
-2. Instale as dependências:
-
-pip install pandas 
-
-pip install openpyxl
-
-4. Execute o script:
-
-python src/etl.py
 
 ## Resultados:
 
